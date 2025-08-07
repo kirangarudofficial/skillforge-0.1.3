@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { Star, Clock, Users, Award, Play, Download, Heart, Share2, ChevronDown, ChevronUp } from 'lucide-react';
+import BreadcrumbNavigation from '../BreadcrumbNavigation';
 import { Course } from '../../hooks/useSearch';
 import { useCart } from '../../contexts/CartContext';
 import { useAuth } from '../../contexts/AuthContext';
@@ -146,6 +147,17 @@ const CourseDetail: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
+      {/* Breadcrumb Navigation */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6">
+        <BreadcrumbNavigation
+          items={[
+            { label: 'Courses', href: '/' },
+            { label: course.category, href: `/?category=${course.category}` },
+            { label: course.title, current: true }
+          ]}
+        />
+      </div>
+
       {/* Hero Section */}
       <div className="bg-gray-900 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">

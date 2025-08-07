@@ -1,6 +1,7 @@
 import React, { useState, useRef } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { Play, Pause, Volume2, VolumeX, Maximize, SkipBack, SkipForward, Settings, List, X } from 'lucide-react';
+import BreadcrumbNavigation from '../BreadcrumbNavigation';
 
 interface Lesson {
   id: string;
@@ -129,6 +130,19 @@ const CoursePlayer: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-black flex">
+      {/* Breadcrumb - only show when playlist is visible */}
+      {showPlaylist && (
+        <div className="absolute top-4 left-4 z-10">
+          <BreadcrumbNavigation
+            items={[
+              { label: 'Courses', href: '/' },
+              { label: 'Python Bootcamp', href: `/course/${courseId}` },
+              { label: currentLesson.title, current: true }
+            ]}
+          />
+        </div>
+      )}
+
       {/* Video Player */}
       <div className={`flex-1 relative ${showPlaylist ? 'mr-80' : ''}`}>
         <div className="relative h-screen">

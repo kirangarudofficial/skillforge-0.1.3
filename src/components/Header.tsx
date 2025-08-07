@@ -147,7 +147,7 @@ const Header = () => {
               )}
             </div>
             <a href="#" className="flex items-center text-gray-700 hover:text-purple-600 transition-colors">
-              <Zap className="w-4 h-4 mr-1" />
+              <MessageCircle className="w-4 h-4 mr-1" />
               Teach on Skill Forge
             </a>
             
@@ -248,6 +248,7 @@ const Header = () => {
                         <Globe className="w-4 h-4 mr-2" />
                         Language: English
                       </button>
+                    </div>
                     </button>
                     <button
                       onClick={handleLogout}
@@ -255,7 +256,6 @@ const Header = () => {
                     >
                       <LogOut className="w-4 h-4 mr-2" />
                       Sign Out
-                    </button>
                   </div>
                 )}
                 </div>
@@ -321,7 +321,7 @@ const Header = () => {
               </a>
               <a href="#" className="text-gray-700 hover:text-purple-600 transition-colors">Categories</a>
               <a href="#" className="flex items-center text-gray-700 hover:text-purple-600 transition-colors">
-                <Zap className="w-4 h-4 mr-2" />
+                <MessageCircle className="w-4 h-4 mr-2" />
                 Teach on Skill Forge
               </a>
               {user ? (
